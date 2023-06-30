@@ -1,0 +1,18 @@
+trigger OrdersTrigger on Order (before update , after delete) {
+    if (Trigger.isUpdate){
+       		 if (Trigger.isBefore) {
+                 if (OrderManager.hasProducts(Trigger.new)) {
+                     OrderManager.updateOrders(Trigger.new); 
+                 }
+                 else {
+                     system.debug('Cannot update status orders because order is missing associated products');
+                 }
+                 }
+    }
+    else if (Trigger.isDelete && Trigger.isAfter) {
+        if (OrderManager.hasOtherOrders(Trigger.new)) {
+            OrderManager.updateAccount(Trigger.new);
+        }
+    }
+
+}
