@@ -49,15 +49,6 @@ public with sharing class OrderManager {
     }
     
     public static void updateAccount(List<Order> OrdersList4){
-        
-        /*
-        set<Id> setAccountIds = new set<Id>();
-        List<Order>ordersList = new List<Order>();
-        for (Order newOrder : ordersList) {
-            setAccountIds.add(newOrder.AccountId);
-        }
-    }
-*/
       List<Account> accountsToUpdate = new List<Account>();
 	  List<Account> accounts = new List<Account>() ;
 // Iterate over the Account records
