@@ -14,11 +14,7 @@ private class BatchOrdersTest {
     Test.stopTest();      
       
    List<Task> tasks =
-[SELECT Id,
-       WhatId,
- 	   Priority,
- 		Subject,
- 		Status,
+[SELECT Id, WhatId, Priority,Subject,Status,
        TypeOf What
            WHEN Account THEN Name, OwnerId
        END
@@ -45,11 +41,7 @@ private class BatchOrdersTest {
     Test.stopTest();
 
    List<Task> tasks =
-[SELECT Id,
-       WhatId,
- 	   Priority,
- 		Subject,
- 		Status,
+[SELECT Id, WhatId, Priority,Subject,Status,
        TypeOf What
            WHEN Account THEN Name, OwnerId
        END
